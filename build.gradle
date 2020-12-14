@@ -1,0 +1,94 @@
+plugins {
+    id 'java'
+    id "com.jfrog.bintray" version "1.8.1"
+    id "maven-publish"
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    archiveClassifier.set("sources")
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            id "zesagata"
+            name "ZE Sagata"
+            email "zezagata17@gmail.com"
+        }
+    }
+
+    scm {
+        url "https://github.com/zezagata17/isodd-java"
+    }
+}
+
+publishing {
+    publications {
+        mavenPublication(MavenPublication) {
+            from components.java
+            artifact sourcesJar {
+                archiveClassifier.set("sources")
+            }
+            groupId 'com.zesagata.isoddjava'
+            artifactId 'isodd-java'
+            version '1.0.0'
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'isodd')
+                root.appendNode('name', 'isodd')
+                root.appendNode('url', 'https://github.com/zesagata/isodd-java')
+                root.children().last() + pomConfig
+            }
+        }
+    }
+}
+
+bintray {
+    user = System.getProperty('bintray.user')
+    key = System.getProperty('bintray.key')
+    publications = ['mavenPublication']
+
+    pkg {
+        repo = 'isodd-java'
+        name = 'isodd-java'
+        userOrg = 'zesagata'
+        vcsUrl = 'https://github.com/bintray/gradle-bintray-plugin.git'
+        version {
+            name = '1.0.0'
+            desc = '1.0.0'
+            licenses = ['Apache-2.0']
+            released  = new Date()
+            gpg {
+                sign = true
+            }
+        }
+    }
+
+}

@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.zesagata.isoddjava",
+    "module": "isodd-java",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7",
+      "buildId": "dksmofpewvbgfhykgj3tehez3q"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 15,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "isodd-java-1.0.0.jar",
+          "url": "isodd-java-1.0.0.jar",
+          "size": 850,
+          "sha512": "97a47556d16f2e58a51f827e0898bd333f4159c37bfd5896a70f7e0556d4405acb66287e7835c81fc369bfef63fd2b2d03010629edd4de13c163b897037193fa",
+          "sha256": "5f9cc4d30c5b4154083611ef5cbf770bbd09143bf63ad2d1ae72e2980154deae",
+          "sha1": "6477c7318ec5f4116ace77d7c58b05bcd7cd403c",
+          "md5": "64516df1f10d7ca856ba5882b3dc76ae"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 15,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "isodd-java-1.0.0.jar",
+          "url": "isodd-java-1.0.0.jar",
+          "size": 850,
+          "sha512": "97a47556d16f2e58a51f827e0898bd333f4159c37bfd5896a70f7e0556d4405acb66287e7835c81fc369bfef63fd2b2d03010629edd4de13c163b897037193fa",
+          "sha256": "5f9cc4d30c5b4154083611ef5cbf770bbd09143bf63ad2d1ae72e2980154deae",
+          "sha1": "6477c7318ec5f4116ace77d7c58b05bcd7cd403c",
+          "md5": "64516df1f10d7ca856ba5882b3dc76ae"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+com/zesagata/TestIsOdd.java
+ com.zesagata.TestIsOdd
