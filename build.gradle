@@ -31,8 +31,8 @@ artifacts {
 def pomConfig = {
     licenses {
         license {
-            name "The Apache Software License, Version 2.0"
-            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            name "MIT"
+            url "https://opensource.org/licenses/MIT"
             distribution "repo"
         }
     }
@@ -45,7 +45,7 @@ def pomConfig = {
     }
 
     scm {
-        url "https://github.com/zezagata17/isodd-java"
+        url "https://github.com/zesagata/isodd-java"
     }
 }
 
@@ -78,8 +78,8 @@ bintray {
     pkg {
         repo = 'isodd-java'
         name = 'isodd-java'
-        userOrg = 'zesagata'
-        vcsUrl = 'https://github.com/bintray/gradle-bintray-plugin.git'
+        userOrg = 'zesagata.com'
+        vcsUrl = 'https://github.com/zesagata/isodd-java'
         version {
             name = '1.0.0'
             desc = '1.0.0'
